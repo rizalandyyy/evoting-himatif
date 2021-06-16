@@ -94,6 +94,14 @@ class Committee extends CI_Controller
         redirect('committee/kandidat');
     }
 
+    function drop($id)
+    {
+        $_id = $this->db->get_where('tb_pemilih', ['id_pemilih' => $id])->row();
+        $query = $this->db->delete('tb_pemilih', ['id_pemilih' => $id]);
+
+        redirect('committee/aktif');
+    }
+
     function detail($id)
     {
         $this->load->view('header');
@@ -117,5 +125,21 @@ class Committee extends CI_Controller
         $data['kandidat'] = $this->m_data->tampilkandidataktif()->result_array();
         $this->load->view('v_pemilihaktif', $data);
         $this->load->view('footer');
+    }
+
+    function verifikasi()
+    {
+        $status = $this->input->post('status');
+        $id = $this->input->post('id');
+        $data = array(
+            'status_pemilih' => $status
+        );
+
+        $where = array(
+            'id_pemilih' => $id
+        );
+
+        $this->m_data->update_data($where, $data, 'tb_pemilih');
+        redirect('committee/aktif');
     }
 }

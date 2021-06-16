@@ -16,34 +16,37 @@
                                     <th>Nim</th>
                                     <th>Kelas</th>
                                     <th>Semester</th>
+                                    <th>KTM</th>
                                     <th>Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
+                                <?php $x = 1 ?>
                                 <?php foreach ($kandidat as $row) : ?>
                                 <tr>
+                                    <td><?php echo $x ?></td>
+                                    <td><?php echo $row['nama_pemilih']; ?></td>
+                                    <td><?php echo $row['email_pemilih']; ?></td>
+                                    <td><?php echo $row['nim_pemilih']; ?></td>
+                                    <td><?php echo $row['kelas_pemilih']; ?></td>
+                                    <td><?php echo $row['semester_pemilih']; ?></td>
+                                    <td><a href="<?php echo base_url() . 'assets/ktm/'; ?><?php echo $row['gambar_ktm']; ?>"
+                                            target="_blank">Cek
+                                            KTM</a></td>
                                     <td>
-
-                                        Genelia
-                                        Deshmukh
-                                    </td>
-                                    <td>genelia@gmail.com</td>
-                                    <td>12344567898765</td>
-                                    <td>+123 456 789</td>
-                                    <td>
-                                        <span class="label label-danger">Designer</span>
-                                    </td>
-                                    <td>12-10-2014</td>
-                                    <td>
-                                        <a href="">Aktivasi
-                                            <button type="button"
+                                        <form action="<?php echo base_url('committee/verifikasi') ?>" method="POST">
+                                            <input type="hidden" name="id" value="<?php echo $row['id_pemilih']; ?>">
+                                            <input type="hidden" name="status" value="1">
+                                            <button type="submit"
                                                 class="btn btn-sm btn-icon btn-pure btn-outline delete-row-btn"
-                                                data-toggle="tooltip" data-original-title="Update ">
+                                                data-toggle="tooltip" data-original-title="Aktivasi Pemilih ">
+                                                Aktivasi
                                                 <i class="ti-arrow-circle-down" aria-hidden="true"></i>
                                             </button>
-                                        </a>
+                                        </form>
                                     </td>
                                 </tr>
+                                <?php $x++ ?>
                                 <?php endforeach ?>
                             </tbody>
                         </table>

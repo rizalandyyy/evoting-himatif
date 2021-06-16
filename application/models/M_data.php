@@ -34,11 +34,18 @@ class M_data extends CI_Model
 
     function tampilkandidatpasif()
     {
-        $this->db->where('status_pemilih', 1);
+        $this->db->where('status_pemilih', 0);
         return $this->db->get('tb_pemilih');
     }
 
     function tampilkandidataktif()
     {
+        $this->db->where('status_pemilih', 1);
+        return $this->db->get('tb_pemilih');
+    }
+
+    function tampilkandidat()
+    {
+        return $this->db->get('tb_kandidat');
     }
 }
