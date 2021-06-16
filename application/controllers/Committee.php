@@ -102,4 +102,20 @@ class Committee extends CI_Controller
         $this->load->view('v_detailkandidat', $data);
         $this->load->view('footer');
     }
+
+    function pemilih()
+    {
+        $this->load->view('header');
+        $data['kandidat'] = $this->m_data->tampilkandidatpasif()->result_array();
+        $this->load->view('v_pemilih', $data);
+        $this->load->view('footer');
+    }
+
+    function aktif()
+    {
+        $this->load->view('header');
+        $data['kandidat'] = $this->m_data->tampilkandidataktif()->result_array();
+        $this->load->view('v_pemilih', $data);
+        $this->load->view('footer');
+    }
 }

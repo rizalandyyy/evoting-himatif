@@ -73,42 +73,80 @@
 <br>
 <main id="main">
     <!-- ======= Team Section ======= -->
-    <section id="team" class="team section-bg">
+
+    <!-- ======= Counts Section ======= -->
+    <section id="counts" class="counts">
         <div class="container">
-
-            <div class="section-title" data-aos="fade-up">
-                <h2>Kandidat Voting</h2>
-                <p>Pilihlah kandidat di bawah dengan sungguh-sungguh sesuai hati nurani Anda</p>
-            </div>
-
+            <?php foreach ($kandidat as $u) { ?>
             <div class="row">
-                <?php foreach ($kandidat as $row) : ?>
-                <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-                    <div class="member" data-aos="fade-up" data-aos-delay="100">
-                        <div class="member-img">
-                            <img src="<?php echo base_url() . 'assets/images/'; ?><?php echo $row['gambar_kandidat'] ?>"
-                                class="img-fluid" alt="">
-                            <div class="social">
-                                <a href=""><i class="icofont-twitter"></i></a>
-                                <a href=""><i class="icofont-facebook"></i></a>
-                                <a href=""><i class="icofont-instagram"></i></a>
-                                <a href=""><i class="icofont-linkedin"></i></a>
-                            </div>
-                        </div>
-                        <div class="member-info">
-                            <h4><a
-                                    href="<?php echo base_url(); ?>pemilihan/detail/<?php echo $row['id_kandidat']; ?>"><?php echo $row['nama_kandidat'] ?></a>
-                            </h4>
-                            <span><?php echo $row['nim_kandidat'] ?></span>
-                        </div>
-                    </div>
+                <div class="image col-xl-5 d-flex align-items-stretch justify-content-center justify-content-xl-start"
+                    data-aos="fade-right" data-aos-delay="150">
+                    <img style="width: 500px; height: 450px"
+                        src="<?php echo base_url() . 'assets/images/'; ?><?php echo $u->gambar_kandidat ?>" alt=""
+                        class="img-fluid">
                 </div>
-                <?php endforeach; ?>
+
+                <div class="col-xl-7 d-flex align-items-stretch pt-4 pt-xl-0" data-aos="fade-left" data-aos-delay="300">
+                    <div class="content d-flex flex-column justify-content-center">
+                        <div class="row">
+                            <div class="col-md-12 d-md-flex align-items-md-stretch">
+                                <div class="count-box">
+                                    <p>Nama Kandidat</p>
+                                    <span style="font-size: 24px;"><?php echo $u->nama_kandidat ?></span>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12 d-md-flex align-items-md-stretch">
+                                <div class="count-box" style="padding-top: unset">
+                                    <p>NIM</p>
+                                    <span style="font-size: 24px;"><?php echo $u->nim_kandidat ?></span>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12 d-md-flex align-items-md-stretch">
+                                <div class="count-box" style="padding-top: unset">
+                                    <p>Visi</p>
+                                    <span style="font-size: 24px;"><?php echo $u->visi_kandidat ?></span>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12 d-md-flex align-items-md-stretch">
+                                <div class="count-box" style="padding-top: unset">
+                                    <p>Misi</p>
+                                    <span style="font-size: 24px;"><?php echo $u->misi_kandidat ?></span>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12 d-md-flex align-items-md-stretch">
+                                <div class="count-box" style="padding-top: unset">
+                                    <p>Pengalaman Organisasi</p>
+                                    <span style="font-size: 24px;"><?php echo $u->pengalaman_organisasi ?></span>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12 d-md-flex align-items-md-stretch">
+                                <div class="count-box" style="padding-top: unset; padding-bottom: 50px">
+                                    <p>Pengalaman Kepanitiaan</p>
+                                    <span style="font-size: 24px;"><?php echo $u->pengalaman_kepanitiaan ?></span>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12 d-md-flex align-items-md-stretch">
+                                <br>
+                                <h6><a type="submit" href="<?php echo base_url('login') ?>"> <span style="background: green;
+    color: #fff;
+    border-radius: 50px;
+    margin: 0 0 0 50px;
+    padding: 10px 25px;">VOTE!</span></a></h6>
+                            </div>
+
+                        </div>
+                    </div><!-- End .content-->
+                </div>
             </div>
-
+            <?php } ?>
         </div>
-    </section><!-- End Team Section -->
-
+    </section><!-- End Counts Section -->
     <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact">
         <div class="container">

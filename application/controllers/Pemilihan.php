@@ -25,4 +25,11 @@ class pemilihan extends CI_Controller
         $data['kandidat'] = $this->m_data->tampilkandidat()->result_array();
         $this->load->view('u_pemilihan', $data);
     }
+
+    public function detail($id)
+    {
+        $where = array('id_kandidat' => $id);
+        $data['kandidat'] = $this->m_data->edit_data($where, 'tb_kandidat')->result();
+        $this->load->view('u_detailkandidat', $data);
+    }
 }

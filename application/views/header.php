@@ -205,13 +205,13 @@
                             </a>
                             <ul aria-expanded="false" class="collapse  first-level">
                                 <li class="sidebar-item">
-                                    <a href="ticket-list.html" class="sidebar-link">
+                                    <a href="<?php echo base_url('committee/pemilih') ?>" class="sidebar-link">
                                         <i class="mdi mdi-book-multiple"></i>
                                         <span class="hide-menu"> Pemilih Belum Aktif </span>
                                     </a>
                                 </li>
                                 <li class="sidebar-item">
-                                    <a href="ticket-detail.html" class="sidebar-link">
+                                    <a href="<?php echo base_url('committee/aktif') ?>" class="sidebar-link">
                                         <i class="mdi mdi-book-plus"></i>
                                         <span class="hide-menu"> Pemilih Aktif </span>
                                     </a>
