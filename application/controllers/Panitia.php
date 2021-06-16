@@ -11,19 +11,14 @@ class Panitia extends CI_Controller
         $this->load->model('m_data');
     }
 
-    public function index()
-    {
-        $this->load->view('');
-    }
-
     public function login()
     {
-        $this->load->view('panitia_login');
+        $this->load->view('v_panitialogin');
     }
 
     public function registrasi()
     {
-        $this->load->view('panitia_register');
+        $this->load->view('v_panitiaregister');
     }
 
     public function signup()

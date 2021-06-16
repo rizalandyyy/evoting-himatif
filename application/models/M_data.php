@@ -25,4 +25,10 @@ class M_data extends CI_Model
         $hsl = $this->db->query("INSERT INTO tb_panitia (nama_panitia, divisi_panitia, email_panitia, username_panitia, password_panitia,status_panitia) VALUES ('$nama','$divisi','$email','$username','$password','0')");
         return $hsl;
     }
+
+    function simpan_post($nourut, $nama, $tempatlahir, $tanggallahir, $agama, $nim, $visi, $misi, $pengalaman, $kepanitiaan, $gambar)
+    {
+        $hsl = $this->db->query("INSERT INTO tb_kandidat (no_urut, nama_kandidat, tempat_lahir, tanggal_lahir, agama_kandidat, nim_kandidat, visi_kandidat, misi_kandidat, pengalaman_organisasi, pengalaman_kepanitiaan, gambar_kandidat) VALUES ('$nourut','$nama','$tempatlahir','$tanggallahir','$agama','$nim','$visi','$misi','$pengalaman','$kepanitiaan','$gambar')");
+        return $hsl;
+    }
 }
