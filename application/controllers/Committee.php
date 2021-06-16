@@ -107,7 +107,7 @@ class Committee extends CI_Controller
     {
         $this->load->view('header');
         $data['kandidat'] = $this->m_data->tampilkandidatpasif()->result_array();
-        $this->load->view('v_pemilih', $data);
+        $this->load->view('v_pemilihpasif', $data);
         $this->load->view('footer');
     }
 
@@ -115,7 +115,7 @@ class Committee extends CI_Controller
     {
         $this->load->view('header');
         $data['kandidat'] = $this->m_data->tampilkandidataktif()->result_array();
-        $this->load->view('v_pemilih', $data);
+        $this->load->view('v_pemilihaktif', $data);
         $this->load->view('footer');
     }
 }

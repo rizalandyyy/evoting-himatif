@@ -100,12 +100,12 @@
                         <table id="file_export" class="table table-bordered nowrap display">
                             <thead>
                                 <tr>
+                                    <th>No</th>
                                     <th>Nama</th>
                                     <th>Email</th>
                                     <th>Nim</th>
-                                    <th>Nomor Telp</th>
-                                    <th>Pilihan Kandidat</th>
-                                    <th>Waktu Pemilihan</th>
+                                    <th>Kelas</th>
+                                    <th>Semester</th>
                                     <th>Aksi</th>
                                 </tr>
                             </thead>

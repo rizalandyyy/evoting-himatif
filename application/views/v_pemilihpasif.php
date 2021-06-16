@@ -10,16 +10,17 @@
                         <table id="file_export" class="table table-bordered nowrap display">
                             <thead>
                                 <tr>
+                                    <th>No</th>
                                     <th>Nama</th>
                                     <th>Email</th>
                                     <th>Nim</th>
-                                    <th>Nomor Telp</th>
-                                    <th>Pilihan Kandidat</th>
-                                    <th>Waktu Pemilihan</th>
+                                    <th>Kelas</th>
+                                    <th>Semester</th>
                                     <th>Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
+                                <?php foreach ($kandidat as $row) : ?>
                                 <tr>
                                     <td>
 
@@ -34,13 +35,16 @@
                                     </td>
                                     <td>12-10-2014</td>
                                     <td>
-                                        <button type="button"
-                                            class="btn btn-sm btn-icon btn-pure btn-outline delete-row-btn"
-                                            data-toggle="tooltip" data-original-title="Delete">
-                                            <i class="ti-close" aria-hidden="true"></i>
-                                        </button>
+                                        <a href="">Aktivasi
+                                            <button type="button"
+                                                class="btn btn-sm btn-icon btn-pure btn-outline delete-row-btn"
+                                                data-toggle="tooltip" data-original-title="Update ">
+                                                <i class="ti-arrow-circle-down" aria-hidden="true"></i>
+                                            </button>
+                                        </a>
                                     </td>
                                 </tr>
+                                <?php endforeach ?>
                             </tbody>
                         </table>
                     </div>
