@@ -126,14 +126,14 @@
                                             alt="user" class="img-circle" width="60">
                                     </div>
                                     <div class="m-l-10">
-                                        <h4 class="m-b-0">Steave Jobs</h4>
-                                        <p class=" m-b-0">varun@gmail.com</p>
+                                        <h4 class="m-b-0"><?php echo $this->session->userdata('nama') ?></h4>
+                                        <p class=" m-b-0"><?php echo $this->session->userdata('email') ?></p>
                                     </div>
                                 </div>
                                 <a class="dropdown-item" href="javascript:void(0)">
                                     <i class="ti-user m-r-5 m-l-5"></i> My Profile</a>
 
-                                <a class="dropdown-item" href="javascript:void(0)">
+                                <a class="dropdown-item" href="<?php echo base_url('panitia/logout') ?>">
                                     <i class="fa fa-power-off m-r-5 m-l-5"></i> Logout</a>
                                 <div class="dropdown-divider"></div>
 
@@ -167,7 +167,8 @@
                                         class="rounded-circle img-fluid" />
                                 </div>
                                 <div class="user-content hide-menu m-t-10">
-                                    <h5 class="m-b-10 user-name font-medium">Steave Jobs</h5>
+                                    <h5 class="m-b-10 user-name font-medium">
+                                        <?php echo $this->session->userdata('nama') ?></h5>
                                 </div>
                             </div>
                             <!-- End User Profile-->

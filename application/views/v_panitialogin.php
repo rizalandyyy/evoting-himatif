@@ -53,19 +53,23 @@
                     <!-- Form -->
                     <div class="row">
                         <div class="col-12">
-                            <form class="form-horizontal m-t-20" action="<?php echo base_url('panitia/signin') ?>">
+                            <form class="form-horizontal m-t-20" method="POST"
+                                action="<?php echo base_url('panitia/signin') ?>">
                                 <div class="form-group row ">
                                     <div class="col-12 ">
-                                        <input class="form-control form-control-lg" type="text" required=" "
-                                            placeholder="Username">
+                                        <input class="form-control form-control-lg" name="username" type="text"
+                                            required=" " placeholder="Username">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-12 ">
-                                        <input class="form-control form-control-lg" type="password" required=" "
-                                            placeholder="Password">
+                                        <input class="form-control form-control-lg" name="password" type="password"
+                                            required=" " placeholder="Password">
                                     </div>
                                 </div>
+                                <?php if (isset($wrong)) {
+                                    echo "<div class='error'>$wrong </div>";
+                                } ?>
 
                                 <div class="form-group text-center ">
                                     <div class="col-xs-12 p-b-20 ">

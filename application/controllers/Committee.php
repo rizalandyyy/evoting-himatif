@@ -1,15 +1,23 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class committee extends CI_Controller
+class Committee extends CI_Controller
 {
     public function __construct()
     {
         parent::__construct();
+        $this->logged_in();
         $this->load->library('form_validation');
         $this->load->model('m_login');
         $this->load->model('m_data');
         $this->load->library('upload');
+    }
+
+    private function logged_in()
+    {
+        if (!$this->session->userdata('logged_in_user')) {
+            redirect('panitia/login');
+        }
     }
 
     public function index()
@@ -73,7 +81,25 @@ class committee extends CI_Controller
     public function kandidat()
     {
         $this->load->view('header');
-        $this->load->view('v_kandidat');
+        $data['kandidat'] = $this->m_data->tampilkandidat()->result_array();
+        $this->load->view('v_kandidat', $data);
+        $this->load->view('footer');
+    }
+
+    function delete($id)
+    {
+        $_id = $this->db->get_where('tb_kandidat', ['id_kandidat' => $id])->row();
+        $query = $this->db->delete('tb_kandidat', ['id_kandidat' => $id]);
+
+        redirect('committee/kandidat');
+    }
+
+    function detail($id)
+    {
+        $this->load->view('header');
+        $where = array('id_kandidat' => $id);
+        $data['kandidat'] = $this->m_data->edit_data($where, 'tb_kandidat')->result();
+        $this->load->view('v_detailkandidat', $data);
         $this->load->view('footer');
     }
 }

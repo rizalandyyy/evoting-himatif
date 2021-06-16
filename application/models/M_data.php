@@ -31,4 +31,9 @@ class M_data extends CI_Model
         $hsl = $this->db->query("INSERT INTO tb_kandidat (no_urut, nama_kandidat, tempat_lahir, tanggal_lahir, agama_kandidat, nim_kandidat, visi_kandidat, misi_kandidat, pengalaman_organisasi, pengalaman_kepanitiaan, gambar_kandidat) VALUES ('$nourut','$nama','$tempatlahir','$tanggallahir','$agama','$nim','$visi','$misi','$pengalaman','$kepanitiaan','$gambar')");
         return $hsl;
     }
+
+    function tampilkandidat()
+    {
+        return $this->db->get('tb_kandidat');
+    }
 }

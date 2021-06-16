@@ -57,7 +57,7 @@
                 <li><a href="<?php echo base_url('dashboard') ?>#contact">Kontak</a></li>
                 <li><a href="<?php echo base_url('panitia/login') ?>">Login Panitia</a></li>
 
-                <li class="get-started"><a href="<?php echo base_url('login') ?>"> Mulai Voting</a></li>
+                <li class="get-started"><a href="<?php echo base_url('pemilihan') ?>"> Mulai Voting</a></li>
             </ul>
         </nav><!-- .nav-menu -->
 
@@ -73,7 +73,8 @@
                 <h1 data-aos="fade-up">Mulai Kampanye anda!</h1>
                 <h2 data-aos="fade-up" data-aos-delay="400">Dengan E-Voting semua lebih mudah & lebih gampang</h2>
                 <div data-aos="fade-up" data-aos-delay="800">
-                    <a href="register.html" class="btn-get-started scrollto">Mulai Kampanye-mu sekarang!</a>
+                    <a href="<?php echo base_url('panitia') ?>" class="btn-get-started scrollto">Mulai Kampanye-mu
+                        sekarang!</a>
                 </div>
             </div>
             <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="fade-left" data-aos-delay="200">

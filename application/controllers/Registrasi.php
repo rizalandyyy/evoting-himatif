@@ -49,14 +49,14 @@ class Registrasi extends CI_Controller
                 $password = $this->input->post('password');
 
                 $this->m_data->simpan_registrasi($nama, $nim, $kelas, $semester, $email, $alamat, $nomorhp, $username, $password, $gambar); //simpan artikel ke database
-                redirect('login');
+                redirect('verifikasi');
             } else {
                 //redirect ke blog jika gambar gagal upload
-                redirect('registrasi');
+                redirect('wrong');
             }
         } else {
             //redirect ke blog jika gambar kosong
-            redirect('registrasi');
+            redirect('wrong');
         }
     }
 }

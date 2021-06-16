@@ -77,6 +77,53 @@
 <script src="<?php echo base_url() . 'assets/auth/'; ?>cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/vfs_fonts.js">
 </script>
 <script src="<?php echo base_url() . 'assets/auth/'; ?>js/pages/datatable/datatable-advanced.init.js"></script>
+<script src="<?php echo base_url() . 'assets/auth/'; ?>libs/summernote/dist/summernote-bs4.min.js"></script>
+<script>
+/************************************/
+//default editor
+/************************************/
+$('.summernote').summernote({
+    height: 350, // set editor height
+    minHeight: null, // set minimum height of editor
+    maxHeight: null, // set maximum height of editor
+    focus: false // set focus to editable area after initializing summernote
+});
+
+/************************************/
+//inline-editor
+/************************************/
+$('.inline-editor').summernote({
+    airMode: true
+});
+
+/************************************/
+//edit and save mode
+/************************************/
+window.edit = function() {
+        $(".click2edit").summernote()
+    },
+    window.save = function() {
+        $(".click2edit").summernote('destroy');
+    }
+
+var edit = function() {
+    $('.click2edit').summernote({
+        focus: true
+    });
+};
+
+var save = function() {
+    var markup = $('.click2edit').summernote('code');
+    $('.click2edit').summernote('destroy');
+};
+
+/************************************/
+//airmode editor
+/************************************/
+$('.airmode-summer').summernote({
+    airMode: true
+});
+</script>
 </body>
 
 <!-- Mirrored from themedesigner.in/demo/adminbite/html/light-sidebar/index2.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 09 Apr 2021 09:02:45 GMT -->

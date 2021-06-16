@@ -59,7 +59,7 @@
                     <li><a href="<?php echo base_url('dashboard') ?>#contact">Kontak</a></li>
                     <li><a href="<?php echo base_url('panitia/login') ?>">Login Panitia</a></li>
 
-                    <li class="get-started"><a href="<?php echo base_url('login') ?>"> Mulai Voting</a></li>
+                    <li class="get-started"><a href="<?php echo base_url('pemilihan') ?>"> Mulai Voting</a></li>
                 </ul>
             </nav><!-- .nav-menu -->
 
@@ -93,22 +93,28 @@
                 <div class="row">
 
                     <div class="col-lg-12 col-md-12" data-aos="fade-up" data-aos-delay="300">
-                        <form action="<?php echo base_url('registrasi/proses') ?>" method="post"
+                        <form action="<?php echo base_url('login/proses') ?>" method="post"
                             enctype="multipart/form-data" class="">
 
                             <div class="form-group">
-                                <input type="text" name="username" class="form-control" id="username"
+                                <input required type="text" name="username" class="form-control" id="username"
                                     placeholder="Username" data-rule="minlen:6"
                                     data-msg="Mohon di isi lebih dari 6 karakter" />
                                 <div class="validate"></div>
                             </div>
                             <div class="form-group">
-                                <input type="password" name="password" class="form-control" id="password"
+                                <input required type="password" name="password" class="form-control" id="password"
                                     placeholder="Password" data-rule="minlen:8"
                                     data-msg="Mohon di isi lebih dari 8 karakter" />
                                 <div class="validate"></div>
                             </div>
+                            <?php if (isset($wrong)) {
+                                echo "<div class='error'>$wrong </div>";
+                            } ?>
                             <div class="text-center"><button class="btn btn-primary" type="submit">Login</button>
+                                <br>
+                                <br>
+                                <span>Belum punya akun? <a href="<?php echo base_url('registrasi') ?>">Daftar</a></span>
                             </div>
                         </form>
 
@@ -118,9 +124,7 @@
 
             </div>
         </section><!-- End Contact Section -->
-        <br>
-        <br>
-        <br>
+
         <br>
         <br>
         <br>
