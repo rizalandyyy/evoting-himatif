@@ -34,4 +34,12 @@ class M_login extends CI_Model
         $result = $this->db->get('tb_pengelola');
         return $result;
     }
+
+    public function validateAdmin($username, $password)
+    {
+        $this->db->where('username', $username);
+        $this->db->where('password', $password);
+        $result = $this->db->get('tb_admin');
+        return $result;
+    }
 }

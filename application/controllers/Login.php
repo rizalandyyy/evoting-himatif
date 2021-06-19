@@ -13,7 +13,14 @@ class Login extends CI_Controller
 
     public function index()
     {
-        $this->load->view('login');
+        $this->load->view('u_header');
+        $this->load->view('u_login');
+        $this->load->view('u_footer');
+    }
+
+    public function admin()
+    {
+        $this->load->view('av_login');
     }
 
     public function proses()
@@ -49,7 +56,29 @@ class Login extends CI_Controller
             redirect('pemilihan');
         } else {
             $data['wrong'] = "Akun belum terverifikasi / Pastikan username dan password Anda benar";
-            $this->load->view('login', $data);
+            $this->load->view('u_login', $data);
+        }
+    }
+
+    public function auth()
+    {
+        $username = $this->input->post('username', TRUE);
+        $password = $this->input->post('password', TRUE);
+        $validate = $this->m_login->validateAdmin($username, $password);
+
+        if ($validate->num_rows() > 0) {
+            $data  = $validate->row_array();
+            $sesdata = array(
+                'username'  => 'admin',
+                'logged_in_user' => TRUE
+            );
+
+            $this->session->set_userdata($sesdata);
+
+            redirect('Admin');
+        } else {
+            $data['wrong'] = "Akun belum terverifikasi / Pastikan username dan password Anda benar";
+            $this->load->view('av_login', $data);
         }
     }
 }

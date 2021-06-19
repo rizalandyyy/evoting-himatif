@@ -14,7 +14,9 @@ class Registrasi extends CI_Controller
 
     public function index()
     {
-        $this->load->view('registrasi');
+        $this->load->view('u_header');
+        $this->load->view('u_registrasi');
+        $this->load->view('u_footer');
     }
 
     function proses()
