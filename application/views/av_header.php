@@ -57,7 +57,7 @@
                     <!-- ============================================================== -->
                     <!-- Logo -->
                     <!-- ============================================================== -->
-                    <a class="navbar-brand" href="<?php echo base_url('panitia') ?>">
+                    <a class="navbar-brand" href="<?php echo base_url('admin') ?>">
                         <!-- Logo icon -->
                         <b class="logo-icon">
                             <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
@@ -126,14 +126,14 @@
                                             alt="user" class="img-circle" width="60">
                                     </div>
                                     <div class="m-l-10">
-                                        <h4 class="m-b-0"><?php echo $this->session->userdata('nama') ?></h4>
+                                        <h4 class="m-b-0">Admin</h4>
                                         <p class=" m-b-0"><?php echo $this->session->userdata('email') ?></p>
                                     </div>
                                 </div>
                                 <a class="dropdown-item" href="javascript:void(0)">
                                     <i class="ti-user m-r-5 m-l-5"></i> My Profile</a>
 
-                                <a class="dropdown-item" href="<?php echo base_url('panitia/logout') ?>">
+                                <a class="dropdown-item" href="<?php echo base_url('admin/logout') ?>">
                                     <i class="fa fa-power-off m-r-5 m-l-5"></i> Logout</a>
                                 <div class="dropdown-divider"></div>
 
@@ -168,7 +168,7 @@
                                 </div>
                                 <div class="user-content hide-menu m-t-10">
                                     <h5 class="m-b-10 user-name font-medium">
-                                        <?php echo $this->session->userdata('nama') ?></h5>
+                                        Admin</h5>
                                 </div>
                             </div>
                             <!-- End User Profile-->
@@ -186,9 +186,9 @@
                             </a>
                             <ul aria-expanded="false" class="collapse  first-level">
                                 <li class="sidebar-item">
-                                    <a href="<?php echo base_url('committee') ?>" class="sidebar-link">
+                                    <a href="<?php echo base_url('admin') ?>" class="sidebar-link">
                                         <i class="icon-Record"></i>
-                                        <span class="hide-menu"> Dashboard Panitia </span>
+                                        <span class="hide-menu"> Main </span>
                                     </a>
                                 </li>
                             </ul>
@@ -201,19 +201,19 @@
                             <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)"
                                 aria-expanded="false">
                                 <i class="icon-Ticket"></i>
-                                <span class="hide-menu">Pemilih </span>
+                                <span class="hide-menu">Panitia </span>
                             </a>
                             <ul aria-expanded="false" class="collapse  first-level">
                                 <li class="sidebar-item">
-                                    <a href="<?php echo base_url('committee/pemilih') ?>" class="sidebar-link">
+                                    <a href="<?php echo base_url('admin/inactive') ?>" class="sidebar-link">
                                         <i class="mdi mdi-book-multiple"></i>
-                                        <span class="hide-menu"> Pemilih Belum Aktif </span>
+                                        <span class="hide-menu"> Panitia Belum Aktif </span>
                                     </a>
                                 </li>
                                 <li class="sidebar-item">
-                                    <a href="<?php echo base_url('committee/aktif') ?>" class="sidebar-link">
+                                    <a href="<?php echo base_url('admin/active') ?>" class="sidebar-link">
                                         <i class="mdi mdi-book-plus"></i>
-                                        <span class="hide-menu"> Pemilih Aktif </span>
+                                        <span class="hide-menu"> Panitia Aktif </span>
                                     </a>
                                 </li>
                             </ul>
@@ -226,26 +226,21 @@
                             <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)"
                                 aria-expanded="false">
                                 <i class="icon-Folder-Add"></i>
-                                <span class="hide-menu">Buat Kampanye</span>
+                                <span class="hide-menu">Kampanye</span>
                             </a>
                             <ul aria-expanded="false" class="collapse  first-level">
                                 <li class="sidebar-item">
-                                    <a href="<?php echo base_url('committee/kandidat') ?>" class="sidebar-link">
+                                    <a href="<?php echo base_url('admin/kandidat') ?>" class="sidebar-link">
                                         <i class="mdi mdi-layers"></i>
                                         <span class="hide-menu"> List Kandidat</span>
                                     </a>
                                 </li>
-                                <li class="sidebar-item">
-                                    <a href="<?php echo base_url('committee/add') ?>" class="sidebar-link">
-                                        <i class="mdi mdi-credit-card-scan"></i>
-                                        <span class="hide-menu">Tambah Kandidat</span>
-                                    </a>
-                                </li>
+
                             </ul>
                         </li>
                         <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="<?php echo base_url('panitia/logout') ?>" aria-expanded="false">
+                                href="<?php echo base_url('admin/logout') ?>" aria-expanded="false">
                                 <i class="mdi mdi-directions"></i>
                                 <span class="hide-menu">Log Out</span>
                             </a>

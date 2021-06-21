@@ -58,6 +58,15 @@
                 <li><a href="<?php echo base_url('panitia/login') ?>">Login Panitia</a></li>
 
                 <li class="get-started"><a href="<?php echo base_url('pemilihan') ?>"> Mulai Voting</a></li>
+
+
+
+                <?php
+                if ($this->session->userdata('logged_in_pemilih')) {
+                    echo '<li class="get-started"><a style="margin-left: 10px!important ; background: red"
+                        href="' . base_url("pemilihan/logout") . '"> Logout</a></li>';
+                }
+                ?>
             </ul>
         </nav><!-- .nav-menu -->
 

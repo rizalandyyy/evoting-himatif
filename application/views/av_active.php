@@ -13,29 +13,23 @@
                                     <th>No</th>
                                     <th>Nama</th>
                                     <th>Email</th>
-                                    <th>Nim</th>
-                                    <th>Kelas</th>
-                                    <th>Semester</th>
-                                    <th>KTM</th>
+                                    <th>Divisi</th>
+                                    <th>Username</th>
                                     <th>Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <?php $x = 1 ?>
-                                <?php foreach ($kandidat as $row) : ?>
+                                <?php foreach ($panitia as $row) : ?>
                                 <tr>
                                     <td><?php echo $x ?></td>
-                                    <td><?php echo $row['nama_pemilih']; ?></td>
-                                    <td><?php echo $row['email_pemilih']; ?></td>
-                                    <td><?php echo $row['nim_pemilih']; ?></td>
-                                    <td><?php echo $row['kelas_pemilih']; ?></td>
-                                    <td><?php echo $row['semester_pemilih']; ?></td>
-                                    <td><a href="<?php echo base_url() . 'assets/ktm/'; ?><?php echo $row['gambar_ktm']; ?>"
-                                            target="_blank">Cek
-                                            KTM</a></td>
+                                    <td><?php echo $row['nama_panitia']; ?></td>
+                                    <td><?php echo $row['email_panitia']; ?></td>
+                                    <td><?php echo $row['divisi_panitia']; ?></td>
+                                    <td><?php echo $row['username_panitia']; ?></td>
                                     <td>
-                                        <form action="<?php echo base_url('committee/unverifikasi') ?>" method="POST">
-                                            <input type="hidden" name="id" value="<?php echo $row['id_pemilih']; ?>">
+                                        <form action="<?php echo base_url('admin/unverifikasi') ?>" method="POST">
+                                            <input type="hidden" name="id" value="<?php echo $row['id_panitia']; ?>">
                                             <input type="hidden" name="status" value="0">
                                             <button type="submit"
                                                 class="btn btn-sm btn-icon btn-pure btn-outline delete-row-btn"
@@ -44,15 +38,6 @@
                                                 <i class="ti-arrow-circle-down" aria-hidden="true"></i>
                                             </button>
                                         </form>
-                                        <a href="javascript:void(0)"
-                                            onclick="delete_data(<?php echo $row['id_pemilih'] ?>)">
-                                            <button type="submit"
-                                                class="btn btn-sm btn-icon btn-pure btn-outline delete-row-btn"
-                                                data-toggle="tooltip" data-original-title="Hapus">
-                                                Hapus
-                                                <i class="ti-close" aria-hidden="true"></i>
-                                            </button>
-                                        </a>
                                     </td>
                                 </tr>
                                 <?php $x++ ?>

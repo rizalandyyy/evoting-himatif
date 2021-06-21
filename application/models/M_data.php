@@ -32,10 +32,28 @@ class M_data extends CI_Model
         return $hsl;
     }
 
+    function simpan_vote($kandidat, $pemilih)
+    {
+        $hsl = $this->db->query("INSERT INTO tb_kampanye (id_kandidat, id_pemilih) VALUES ('$kandidat','$pemilih')");
+        return $hsl;
+    }
+
     function tampilkandidatpasif()
     {
         $this->db->where('status_pemilih', 0);
         return $this->db->get('tb_pemilih');
+    }
+
+    function tampilpanitiapasif()
+    {
+        $this->db->where('status_panitia', 0);
+        return $this->db->get('tb_panitia');
+    }
+
+    function tampilpanitiaaktif()
+    {
+        $this->db->where('status_panitia', 1);
+        return $this->db->get('tb_panitia');
     }
 
     function tampilkandidataktif()

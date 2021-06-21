@@ -119,6 +119,22 @@ class Committee extends CI_Controller
         $this->load->view('footer');
     }
 
+    function unverifikasi()
+    {
+        $status = $this->input->post('status');
+        $id = $this->input->post('id');
+        $data = array(
+            'status_pemilih' => $status
+        );
+
+        $where = array(
+            'id_pemilih' => $id
+        );
+
+        $this->m_data->update_data($where, $data, 'tb_pemilih');
+        redirect('committee/aktif');
+    }
+
     function aktif()
     {
         $this->load->view('header');

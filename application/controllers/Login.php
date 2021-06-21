@@ -33,6 +33,7 @@ class Login extends CI_Controller
         if ($validate->num_rows() > 0) {
             $data  = $validate->row_array();
             $nama = $data['nama_pemilih'];
+            $id = $data['id_pemilih'];
             $nim = $data['nim_pemilih'];
             $kelas = $data['kelas_pemilih'];
             $semester = $data['semester_pemilih'];
@@ -41,6 +42,7 @@ class Login extends CI_Controller
             $notelp = $data['no_telp_pemilih'];
 
             $sesdata = array(
+                'id'  => $id,
                 'nama'  => $nama,
                 'nim'  => $nim,
                 'kelas'  => $kelas,
@@ -48,7 +50,7 @@ class Login extends CI_Controller
                 'alamat'  => $alamat,
                 'email'  => $email,
                 'notelp'  => $notelp,
-                'logged_in_user' => TRUE
+                'logged_in_pemilih' => TRUE
             );
 
             $this->session->set_userdata($sesdata);
@@ -56,7 +58,9 @@ class Login extends CI_Controller
             redirect('pemilihan');
         } else {
             $data['wrong'] = "Akun belum terverifikasi / Pastikan username dan password Anda benar";
+            $this->load->view('u_header');
             $this->load->view('u_login', $data);
+            $this->load->view('u_footer');
         }
     }
 
@@ -70,14 +74,14 @@ class Login extends CI_Controller
             $data  = $validate->row_array();
             $sesdata = array(
                 'username'  => 'admin',
-                'logged_in_user' => TRUE
+                'logged_in_useradmin' => TRUE
             );
 
             $this->session->set_userdata($sesdata);
 
-            redirect('Admin');
+            redirect('admin');
         } else {
-            $data['wrong'] = "Akun belum terverifikasi / Pastikan username dan password Anda benar";
+            $data['wrong'] = "Pastikan username dan password Anda benar";
             $this->load->view('av_login', $data);
         }
     }

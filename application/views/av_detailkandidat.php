@@ -119,7 +119,7 @@
                                     <div class="col-md-6">
                                         <div class="row">
                                             <div class="col-md-offset-3 col-md-9">
-                                                <a href="<?php echo base_url('committee/kandidat') ?>">
+                                                <a href="<?php echo base_url('admin/kandidat') ?>">
                                                     <button type="button" class="btn btn-dark">Kembali</button>
                                                 </a>
                                             </div>
