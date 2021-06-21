@@ -23,7 +23,11 @@ class Admin extends CI_Controller
     public function index()
     {
         $this->load->view('av_header');
-        $this->load->view('av_admin');
+        $data['pemilih'] = $this->m_data->tampilpemilih();
+        $data['kandidat'] = $this->m_data->tampilkandidat()->result_array();
+        $data['sudahvoting'] = $this->m_data->sudah_voting();
+        $data['belumvoting'] = $this->m_data->belum_voting();
+        $this->load->view('av_admin', $data);
         $this->load->view('av_footer');
     }
 

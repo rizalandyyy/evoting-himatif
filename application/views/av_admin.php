@@ -7,7 +7,7 @@
         <div class="card">
             <div class="card-body text-center">
                 <h4 class="text-center text-info">Total Pemilih Sudah Memilih</h4>
-                <h2>1200</h2>
+                <h2><?php echo $sudahvoting ?></h2>
                 <div class="row p-t-10 p-b-10">
                     <!-- Column -->
                     <div class="col text-center align-self-center">
@@ -23,7 +23,7 @@
         <div class="card">
             <div class="card-body text-center">
                 <h4 class="text-center text-danger">Total Pemilih Belum Memilih</h4>
-                <h2>1200</h2>
+                <h2><?php echo $belumvoting ?></h2>
                 <div class="row p-t-10 p-b-10">
                     <!-- Column -->
                     <div class="col text-center align-self-center">
@@ -47,41 +47,17 @@
                     <h4 class="card-title">Data Voting</h4>
                     <div class="row m-t-40">
                         <!-- Column -->
-                        <div class="col-md-6 col-lg-3 col-xlg-3">
-                            <div class="card card-hover">
-                                <div class="box bg-info text-center">
-                                    <h1 class="font-light text-white">2,064</h1>
-                                    <h6 class="text-white">Kandidat 1</h6>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Column -->
-                        <div class="col-md-6 col-lg-3 col-xlg-3">
-                            <div class="card card-hover">
-                                <div class="box bg-primary text-center">
-                                    <h1 class="font-light text-white">1,738</h1>
-                                    <h6 class="text-white">Kandidat 2</h6>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Column -->
-                        <div class="col-md-6 col-lg-3 col-xlg-3">
-                            <div class="card card-hover">
-                                <div class="box bg-success text-center">
-                                    <h1 class="font-light text-white">1100</h1>
-                                    <h6 class="text-white">Kandidat 3</h6>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Column -->
+                        <?php foreach ($kandidat as $row) : ?>
                         <div class="col-md-6 col-lg-3 col-xlg-3">
                             <div class="card card-hover">
                                 <div class="box bg-dark text-center">
-                                    <h1 class="font-light text-white">964</h1>
-                                    <h6 class="text-white">Kandidat 4</h6>
+                                    <h1 class="font-light text-white"><?php echo $row['total_terpilih'] ?></h1>
+                                    <h6 class="text-white" style="text-transform: uppercase;">Kandidat 1 |
+                                        <?php echo $row['nama_kandidat'] ?></h6>
                                 </div>
                             </div>
                         </div>
+                        <?php endforeach; ?>
                         <!-- Column -->
                     </div>
                 </div>
@@ -106,31 +82,23 @@
                                     <th>Nim</th>
                                     <th>Kelas</th>
                                     <th>Semester</th>
-                                    <th>Aksi</th>
+                                    <th>Pilihan</th>
                                 </tr>
                             </thead>
                             <tbody>
+                                <?php $x = 1 ?>
+                                <?php foreach ($pemilih as $row) : ?>
                                 <tr>
-                                    <td>
-
-                                        Genelia
-                                        Deshmukh
-                                    </td>
-                                    <td>genelia@gmail.com</td>
-                                    <td>12344567898765</td>
-                                    <td>+123 456 789</td>
-                                    <td>
-                                        <span class="label label-danger">Designer</span>
-                                    </td>
-                                    <td>12-10-2014</td>
-                                    <td>
-                                        <button type="button"
-                                            class="btn btn-sm btn-icon btn-pure btn-outline delete-row-btn"
-                                            data-toggle="tooltip" data-original-title="Delete">
-                                            <i class="ti-close" aria-hidden="true"></i>
-                                        </button>
-                                    </td>
+                                    <td><?php echo $x ?></td>
+                                    <td><?php echo $row->nama_pemilih ?></td>
+                                    <td><?php echo $row->email_pemilih ?></td>
+                                    <td><?php echo $row->nim_pemilih ?></td>
+                                    <td><?php echo $row->kelas_pemilih ?></td>
+                                    <td><?php echo $row->semester_pemilih ?></td>
+                                    <td><?php echo $row->nama_kandidat ?></td>
                                 </tr>
+                                <?php $x++ ?>
+                                <?php endforeach; ?>
                             </tbody>
                         </table>
                     </div>

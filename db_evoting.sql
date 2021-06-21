@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 16, 2021 at 07:22 PM
+-- Generation Time: Jun 21, 2021 at 02:36 PM
 -- Server version: 10.4.13-MariaDB
 -- PHP Version: 7.4.8
 
@@ -33,6 +33,13 @@ CREATE TABLE `tb_admin` (
   `password_admin` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `tb_admin`
+--
+
+INSERT INTO `tb_admin` (`id_admin`, `username_admin`, `password_admin`) VALUES
+(1, 'admin', '123');
+
 -- --------------------------------------------------------
 
 --
@@ -43,7 +50,7 @@ CREATE TABLE `tb_kampanye` (
   `id_pemilihan` int(3) NOT NULL,
   `id_kandidat` int(3) NOT NULL,
   `id_pemilih` int(3) NOT NULL,
-  `tanggal_pemilihan` date NOT NULL
+  `tanggal_pemilihan` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -64,7 +71,8 @@ CREATE TABLE `tb_kandidat` (
   `misi_kandidat` text NOT NULL,
   `pengalaman_organisasi` text NOT NULL,
   `pengalaman_kepanitiaan` text NOT NULL,
-  `gambar_kandidat` varchar(255) NOT NULL
+  `gambar_kandidat` varchar(255) NOT NULL,
+  `total_terpilih` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -101,7 +109,8 @@ CREATE TABLE `tb_pemilih` (
   `email_pemilih` varchar(255) NOT NULL,
   `no_telp_pemilih` varchar(255) NOT NULL,
   `gambar_ktm` varchar(255) NOT NULL,
-  `status_pemilih` int(1) NOT NULL
+  `status_pemilih` int(1) NOT NULL,
+  `status_voting` int(3) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -146,7 +155,7 @@ ALTER TABLE `tb_pemilih`
 -- AUTO_INCREMENT for table `tb_admin`
 --
 ALTER TABLE `tb_admin`
-  MODIFY `id_admin` int(3) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_admin` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `tb_kampanye`

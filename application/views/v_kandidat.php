@@ -6,8 +6,8 @@
     <!-- .row -->
     <div class="row">
         <!-- Column -->
+        <?php foreach ($kandidat as $row) : ?>
         <div class="col-lg-6 col-xl-6 col-md-6">
-            <?php foreach ($kandidat as $row) : ?>
             <div class="card">
                 <div class="card-body text-center">
                     <div class="profile-pic m-b-20 m-t-20">
@@ -37,8 +37,9 @@
                     </div>
                 </div>
             </div>
-            <?php endforeach ?>
+
         </div>
+        <?php endforeach ?>
     </div>
 </div>
 

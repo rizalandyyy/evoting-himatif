@@ -50,6 +50,8 @@
                     <div class="form-group">
                         <label>Pengalaman Kepanitiaan</label>
                         <input type="text" class="form-control" name="kepanitiaan" placeholder="Pengalaman Kepanitiaan">
+                        <input type="hidden" class="form-control" name="total" value="0"
+                            placeholder="Pengalaman Kepanitiaan">
                     </div>
                     <div class="form-group">
                         <label>Upload Gambar Kandidat</label>

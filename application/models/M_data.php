@@ -26,9 +26,9 @@ class M_data extends CI_Model
         return $hsl;
     }
 
-    function simpan_post($nourut, $nama, $tempatlahir, $tanggallahir, $agama, $nim, $visi, $misi, $pengalaman, $kepanitiaan, $gambar)
+    function simpan_post($nourut, $nama, $tempatlahir, $tanggallahir, $agama, $nim, $visi, $misi, $pengalaman, $kepanitiaan, $gambar, $total)
     {
-        $hsl = $this->db->query("INSERT INTO tb_kandidat (no_urut, nama_kandidat, tempat_lahir, tanggal_lahir, agama_kandidat, nim_kandidat, visi_kandidat, misi_kandidat, pengalaman_organisasi, pengalaman_kepanitiaan, gambar_kandidat) VALUES ('$nourut','$nama','$tempatlahir','$tanggallahir','$agama','$nim','$visi','$misi','$pengalaman','$kepanitiaan','$gambar')");
+        $hsl = $this->db->query("INSERT INTO tb_kandidat (no_urut, nama_kandidat, tempat_lahir, tanggal_lahir, agama_kandidat, nim_kandidat, visi_kandidat, misi_kandidat, pengalaman_organisasi, pengalaman_kepanitiaan, gambar_kandidat, total_terpilih) VALUES ('$nourut','$nama','$tempatlahir','$tanggallahir','$agama','$nim','$visi','$misi','$pengalaman','$kepanitiaan','$gambar','$total')");
         return $hsl;
     }
 
@@ -36,6 +36,20 @@ class M_data extends CI_Model
     {
         $hsl = $this->db->query("INSERT INTO tb_kampanye (id_kandidat, id_pemilih) VALUES ('$kandidat','$pemilih')");
         return $hsl;
+    }
+
+    function sudah_voting()
+    {
+        $this->db->where('status_voting', 1);
+        $query = $this->db->get('tb_pemilih');
+        return $query->num_rows();
+    }
+
+    function belum_voting()
+    {
+        $this->db->where('status_voting', 0);
+        $query = $this->db->get('tb_pemilih');
+        return $query->num_rows();
     }
 
     function tampilkandidatpasif()
@@ -65,5 +79,14 @@ class M_data extends CI_Model
     function tampilkandidat()
     {
         return $this->db->get('tb_kandidat');
+    }
+
+    function tampilpemilih()
+    {
+        $this->db->from('tb_pemilih');
+        $this->db->join('tb_kampanye', 'tb_pemilih.id_pemilih = tb_kampanye.id_pemilih');
+        $this->db->join('tb_kandidat', 'tb_kampanye.id_kandidat = tb_kandidat.id_kandidat');
+        $query = $this->db->get();
+        return $query->result();
     }
 }

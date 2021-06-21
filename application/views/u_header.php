@@ -57,7 +57,8 @@
                 <li><a href="<?php echo base_url('dashboard') ?>#contact">Kontak</a></li>
                 <li><a href="<?php echo base_url('panitia/login') ?>">Login Panitia</a></li>
 
-                <li class="get-started"><a href="<?php echo base_url('pemilihan') ?>"> Mulai Voting</a></li>
+                <li class="get-started"><a href="<?php echo base_url('pemilihan') ?>"> Mulai Voting
+                    </a></li>
 
 
 

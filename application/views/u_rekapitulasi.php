@@ -4,13 +4,16 @@
 <br>
 <br>
 <main id="main">
+
+
     <!-- ======= Team Section ======= -->
     <section id="team" class="team section-bg">
         <div class="container">
 
             <div class="section-title" data-aos="fade-up">
-                <h2>Kandidat Voting</h2>
-                <p>Pilihlah kandidat di bawah dengan sungguh-sungguh sesuai hati nurani Anda</p>
+                <h2>Quick Count - Rekapitulasi Langsung</h2>
+                <p style="color: red;">Anda telah melakukan voting di sistem kami.</p>
+                <p style="margin-top: unset;">Data Live Rekapitulasi e-Voting Himatif</p>
             </div>
 
             <div class="row">
@@ -28,10 +31,14 @@
                             </div>
                         </div>
                         <div class="member-info">
-                            <h4><a style="text-transform: uppercase;"
-                                    href="<?php echo base_url(); ?>pemilihan/detail/<?php echo $row['id_kandidat']; ?>"><?php echo $row['nama_kandidat'] ?></a>
+                            <h4><a style="text-transform: capitalize;" href="#"><?php echo $row['nama_kandidat'] ?></a>
                             </h4>
-                            <span><?php echo $row['nim_kandidat'] ?></span>
+                            <span> NIM: <?php echo $row['nim_kandidat'] ?></span>
+                            <br>
+                            <span> Total Pemilih</span>
+                            <h2>
+                                <?php echo $row['total_terpilih'] ?>
+                            </h2>
                         </div>
                     </div>
                 </div>
@@ -40,8 +47,6 @@
 
         </div>
     </section><!-- End Team Section -->
-
-
 
     <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact">

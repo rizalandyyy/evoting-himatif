@@ -23,7 +23,11 @@ class Committee extends CI_Controller
     public function index()
     {
         $this->load->view('header');
-        $this->load->view('v_panitia');
+        $data['pemilih'] = $this->m_data->tampilpemilih();
+        $data['kandidat'] = $this->m_data->tampilkandidat()->result_array();
+        $data['sudahvoting'] = $this->m_data->sudah_voting();
+        $data['belumvoting'] = $this->m_data->belum_voting();
+        $this->load->view('v_panitia', $data);
         $this->load->view('footer');
     }
 
@@ -65,8 +69,9 @@ class Committee extends CI_Controller
                 $misi = $this->input->post('misi');
                 $pengalaman = $this->input->post('pengalaman');
                 $kepanitiaan = $this->input->post('kepanitiaan');
+                $total = $this->input->post('total');
 
-                $this->m_data->simpan_post($nourut, $nama, $tempatlahir, $tanggallahir, $agama, $nim, $visi, $misi, $pengalaman, $kepanitiaan, $gambar); //simpan artikel ke database
+                $this->m_data->simpan_post($nourut, $nama, $tempatlahir, $tanggallahir, $agama, $nim, $visi, $misi, $pengalaman, $kepanitiaan, $gambar, $total); //simpan artikel ke database
                 redirect('committee/kandidat');
             } else {
                 //redirect ke blog jika gambar gagal upload

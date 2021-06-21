@@ -23,9 +23,21 @@ class pemilihan extends CI_Controller
     public function index()
     {
         $data['kandidat'] = $this->m_data->tampilkandidat()->result_array();
-        $this->load->view('u_header');
-        $this->load->view('u_pemilihan', $data);
-        $this->load->view('u_footer');
+        $id = $this->session->userdata('id');
+        $query = $this->db->get_where('tb_kampanye', array( //making selection
+            'id_pemilih' => $id
+        ));
+        $datacek = $query->num_rows();
+
+        if ($datacek == null) {
+            $this->load->view('u_header');
+            $this->load->view('u_pemilihan', $data);
+            $this->load->view('u_footer');
+        } else {
+            $this->load->view('u_header');
+            $this->load->view('u_rekapitulasi', $data);
+            $this->load->view('u_footer');
+        }
     }
 
     public function detail($id)
@@ -41,8 +53,22 @@ class pemilihan extends CI_Controller
     {
         $kandidat = $this->input->post('id_kandidat');
         $pemilih = $this->input->post('id_pemilih');
-
         $this->m_data->simpan_vote($kandidat, $pemilih); //simpan artikel ke database
+
+        $this->db->set('total_terpilih', 'total_terpilih+1', FALSE);
+        $where = array('id_kandidat' => $kandidat);
+        $this->db->where($where);
+        $this->db->update('tb_kandidat');
+
+        $data = array(
+            'status_voting' => '1'
+        );
+        $where = array(
+            'id_pemilih' => $pemilih
+        );
+
+        $this->m_data->update_data($where, $data, 'tb_pemilih');
+
         redirect('pemilihan');
     }
 
