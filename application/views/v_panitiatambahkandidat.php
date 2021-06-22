@@ -13,43 +13,46 @@
                     enctype="multipart/form-data">
                     <div class="form-group">
                         <label>Nomor Urut</label>
-                        <input type="text" class="form-control" name="nourut" placeholder="Nomor Urut">
+                        <input type="text" required class="form-control" name="nourut" placeholder="Nomor Urut">
                     </div>
                     <div class="form-group">
                         <label>Nama Lengkap</label>
-                        <input type="text" class="form-control" name="nama" placeholder="Nama Lengkap">
+                        <input type="text" required class="form-control" name="nama" placeholder="Nama Lengkap">
                     </div>
                     <div class="form-group">
                         <label>Tempat Lahir</label>
-                        <input type="text" class="form-control" name="tempatlahir" placeholder="Tempat Lahir">
+                        <input type="text" required class="form-control" name="tempatlahir" placeholder="Tempat Lahir">
                     </div>
                     <div class="form-group">
                         <label>Tanggal Lahir</label>
-                        <input type="date" class="form-control" name="tanggallahir" placeholder="Tanggal Lahir">
+                        <input type="date" required class="form-control" name="tanggallahir"
+                            placeholder="Tanggal Lahir">
                     </div>
                     <div class="form-group">
                         <label>Agama</label>
-                        <input type="text" class="form-control" name="agama" placeholder="Agama">
+                        <input type="text" required class="form-control" name="agama" placeholder="Agama">
                     </div>
                     <div class="form-group">
                         <label>NIM</label>
-                        <input type="text" class="form-control" name="nim" placeholder="NIM">
+                        <input type="text" required class="form-control" name="nim" placeholder="NIM">
                     </div>
                     <div class="form-group">
                         <label>Visi</label>
-                        <input type="text" class="form-control" name="visi" placeholder="Visi Kandidat">
+                        <input type="text" required class="form-control" name="visi" placeholder="Visi Kandidat">
                     </div>
                     <div class="form-group">
                         <label>Misi</label>
-                        <input type="text" class="form-control" name="misi" placeholder="Misi Kandidat">
+                        <input type="text" required class="form-control" name="misi" placeholder="Misi Kandidat">
                     </div>
                     <div class="form-group">
                         <label>Pengalaman Organisasi</label>
-                        <input type="text" class="form-control" name="pengalaman" placeholder="Pengalaman Organisasi">
+                        <input type="text" required class="form-control" name="pengalaman"
+                            placeholder="Pengalaman Organisasi">
                     </div>
                     <div class="form-group">
                         <label>Pengalaman Kepanitiaan</label>
-                        <input type="text" class="form-control" name="kepanitiaan" placeholder="Pengalaman Kepanitiaan">
+                        <input type="text" required class="form-control" name="kepanitiaan"
+                            placeholder="Pengalaman Kepanitiaan">
                         <input type="hidden" class="form-control" name="total" value="0"
                             placeholder="Pengalaman Kepanitiaan">
                     </div>
@@ -60,7 +63,8 @@
                                 <span class="input-group-text">Upload</span>
                             </div>
                             <div class="custom-file">
-                                <input type="file" name="filefoto" class="custom-file-input" id="inputGroupFile01">
+                                <input type="file" required name="filefoto" class="custom-file-input"
+                                    id="inputGroupFile01">
                                 <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
                             </div>
                         </div>

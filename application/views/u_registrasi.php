@@ -29,17 +29,18 @@
                         <form action="<?php echo base_url('registrasi/proses') ?>" method="post"
                             enctype="multipart/form-data" class="">
                             <div class="form-group">
-                                <input type="text" name="nama" class="form-control" id="name" data-rule="minlen:5"
-                                    placeholder="Nama Lengkap" data-msg="Mohon di isi Nama Lengkap dengan benar" />
+                                <input type="text" required name="nama" class="form-control" id="name"
+                                    data-rule="minlen:5" placeholder="Nama Lengkap"
+                                    data-msg="Mohon di isi Nama Lengkap dengan benar" />
                                 <div class="validate"></div>
                             </div>
                             <div class="form-group">
-                                <input type="text" name="nim" class="form-control" id="nim" data-rule="minlen:15"
-                                    placeholder="NIM" data-msg="Mohon di isi NIM dengan benar" />
+                                <input type="text" required name="nim" class="form-control" id="nim"
+                                    data-rule="minlen:15" placeholder="NIM" data-msg="Mohon di isi NIM dengan benar" />
                                 <div class="validate"></div>
                             </div>
                             <div class="form-group">
-                                <select class="form-select" name="kelas" aria-label=".form-select-lg example">
+                                <select class="form-select" required name="kelas" aria-label=".form-select-lg example">
                                     <option value="" aria-readonly="true">- Pilih Kelas -</option>
                                     <option value="TIK A">TIK A</option>
                                     <option value="TIK B">TIK B</option>
@@ -48,7 +49,8 @@
                                 <div class="validate"></div>
                             </div>
                             <div class="form-group">
-                                <select class="form-select" name="semester" aria-label=".form-select-lg example">
+                                <select class="form-select" required name="semester"
+                                    aria-label=".form-select-lg example">
                                     <option value="" aria-readonly="true">- Semester -</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -60,38 +62,39 @@
                                 <div class="validate"></div>
                             </div>
                             <div class="form-group">
-                                <input type="email" class="form-control" name="email" id="email"
+                                <input type="email" required class="form-control" name="email" id="email"
                                     placeholder="Email Univ. Brawijaya (cont: example@ub.ac.id)" data-rule="email"
                                     data-msg="Mohon di isi alamat Email dengan benar" />
                                 <div class="validate"></div>
                             </div>
                             <div class="form-group">
-                                <input type="text" name="alamat" class="form-control"
+                                <input type="text" required name="alamat" class="form-control"
                                     data-msg="Mohon di isi alamat dengan benar" data-rule="minlen:5" id="alamat"
                                     placeholder="Alamat" />
                                 <div class="validate"></div>
                             </div>
                             <div class="form-group">
-                                <input type="text" name="nomorhp" class="form-control"
+                                <input type="text" required name="nomorhp" class="form-control"
                                     data-msg="Mohon di isi nomor HP/WA dengan benar" data-rule="minlen:10" id="nomorhp"
                                     placeholder="Nomor Handphone" />
                                 <div class="validate"></div>
                             </div>
                             <div class="form-group">
-                                <input type="text" name="username" class="form-control" id="username"
+                                <input type="text" required name="username" class="form-control" id="username"
                                     placeholder="Username" data-rule="minlen:6"
                                     data-msg="Mohon di isi lebih dari 6 karakter" />
                                 <div class="validate"></div>
                             </div>
                             <div class="form-group">
-                                <input type="password" name="password" class="form-control" id="password"
+                                <input type="password" required name="password" class="form-control" id="password"
                                     placeholder="Password" data-rule="minlen:8"
                                     data-msg="Mohon di isi lebih dari 8 karakter" />
                                 <div class="validate"></div>
                             </div>
                             <div class="form-group">
                                 <label for="">Upload Foto KTM</label>
-                                <input type="file" name="foto_ktm" class="form-control" id="foto_ktm" required />
+                                <input type="file" required name="foto_ktm" class="form-control" id="foto_ktm"
+                                    required />
                                 <div class="validate"></div>
                             </div>
                             <div class="text-center"><button class="btn btn-primary" type="submit">Register</button>
