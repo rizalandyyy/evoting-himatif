@@ -208,23 +208,19 @@
                 <div class="col-lg-5 col-md-12" data-aos="fade-up" data-aos-delay="300">
                     <form action="forms/contact.php" method="post" role="form" class="php-email-form">
                         <div class="form-group">
-                            <input type="text" name="name" class="form-control" id="name" placeholder="Nama"
-                                data-rule="minlen:4" data-msg="Mohon di isi" />
+                            <input type="text" required name="name" class="form-control" id="name" placeholder="Nama" data-rule="minlen:4" data-msg="Mohon di isi" />
                             <div class="validate"></div>
                         </div>
                         <div class="form-group">
-                            <input type="email" class="form-control" name="email" id="email" placeholder="Email"
-                                data-rule="email" data-msg="Mohon di isi" />
+                            <input type="email" required class="form-control" name="email" id="email" placeholder="Email" data-rule="email" data-msg="Mohon di isi" />
                             <div class="validate"></div>
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" name="subject" id="subject" placeholder="Subjek"
-                                data-rule="minlen:4" data-msg="Mohon di isi lebih dari 8 karakter" />
+                            <input type="text" required class="form-control" name="subject" id="subject" placeholder="Subjek" data-rule="minlen:4" data-msg="Mohon di isi lebih dari 8 karakter" />
                             <div class="validate"></div>
                         </div>
                         <div class="form-group">
-                            <textarea class="form-control" name="message" rows="5" data-rule="required"
-                                data-msg="Mohon beri pesan untuk kami" placeholder="Pesan"></textarea>
+                            <textarea class="form-control" required name="message" rows="5" data-rule="required" data-msg="Mohon beri pesan untuk kami" placeholder="Pesan"></textarea>
                             <div class="validate"></div>
                         </div>
                         <div class="mb-3">
