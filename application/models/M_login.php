@@ -18,6 +18,13 @@ class M_login extends CI_Model
         return $result;
     }
 
+    public function validateNIM($nim)
+    {
+        $this->db->where('nim_pemilih', $nim);
+        $result = $this->db->get('tb_pemilih');
+        return $result;
+    }
+
     public function validateUser($username, $password, $status)
     {
         $this->db->where('username_pemilih', $username);

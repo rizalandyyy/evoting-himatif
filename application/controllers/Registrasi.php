@@ -50,8 +50,18 @@ class Registrasi extends CI_Controller
                 $username = $this->input->post('username');
                 $password = $this->input->post('password');
 
-                $this->m_data->simpan_registrasi($nama, $nim, $kelas, $semester, $email, $alamat, $nomorhp, $username, $password, $gambar); //simpan artikel ke database
-                redirect('verifikasi');
+                $validate = $this->m_login->validateNIM($nim);
+
+                if ($validate->num_rows() < 1) {
+                    $this->m_data->simpan_registrasi($nama, $nim, $kelas, $semester, $email, $alamat, $nomorhp, $username, $password, $gambar); //simpan artikel ke database
+                    redirect('verifikasi');
+                } else {
+                    $data['wrong'] = "NIM yang Anda gunakan sudah terdaftar di sistem. Gunakan NIM yang lain untuk melanjutkan proses registrasi";
+                    $this->load->view('u_header');
+                    $this->load->view('u_registrasi', $data);
+                    $this->load->view('u_footer');
+                    // redirect('registrasi');
+                }
             } else {
                 //redirect ke blog jika gambar gagal upload
                 redirect('wrong');

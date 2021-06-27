@@ -38,6 +38,9 @@
                                 <input type="text" required name="nim" class="form-control" id="nim"
                                     data-rule="minlen:15" placeholder="NIM" data-msg="Mohon di isi NIM dengan benar" />
                                 <div class="validate"></div>
+                                <?php if (isset($wrong)) {
+                                    echo "<div class='error' style='color:red'>$wrong </div>";
+                                } ?>
                             </div>
                             <div class="form-group">
                                 <select class="form-select" required name="kelas" aria-label=".form-select-lg example">
