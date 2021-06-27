@@ -51,6 +51,7 @@ alert("Selamat Anda Telah Terdaftar. Silahkan login terlebih dahulu untuk ke hal
 
         if ($validate->num_rows() > 0) {
             $data  = $validate->row_array();
+            $id = $data['id_panitia'];
             $nama = $data['nama_panitia'];
             $divisi = $data['divisi_panitia'];
             $email = $data['email_panitia'];
@@ -58,6 +59,7 @@ alert("Selamat Anda Telah Terdaftar. Silahkan login terlebih dahulu untuk ke hal
             $status = $data['status_panitia'];
 
             $sesdata = array(
+                'id'  => $id,
                 'nama'  => $nama,
                 'divisi'  => $divisi,
                 'email'  => $email,

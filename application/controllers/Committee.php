@@ -31,6 +31,35 @@ class Committee extends CI_Controller
         $this->load->view('footer');
     }
 
+    public function profil()
+    {
+        $this->load->view('header');
+        $where = $this->session->userdata('id_panitia');
+        $data['panitia'] = $this->m_data->edit_data($where, 'tb_panitia')->result();
+        $this->load->view('v_profil', $data);
+        $this->load->view('footer');
+    }
+
+    public function update()
+    {
+        $id = $this->input->post('id');
+        $nama = $this->input->post('nama');
+        $divisi = $this->input->post('divisi');
+        $email = $this->input->post('email');
+        $username = $this->input->post('username');
+        $password = $this->input->post('password');
+        $data = array(
+            'nama_panitia' => $nama,
+            'divisi_panitia' => $divisi,
+            'email_panitia' => $email,
+            'username_panitia' => $username,
+            'password_panitia' => $password,
+        );
+        $this->db->where('id_panitia', $id);
+        $this->db->update('tb_panitia', $data);
+        redirect('committee/profil');
+    }
+
     public function add()
     {
         $this->load->view('header');

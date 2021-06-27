@@ -130,7 +130,7 @@
                                         <p class=" m-b-0"><?php echo $this->session->userdata('email') ?></p>
                                     </div>
                                 </div>
-                                <a class="dropdown-item" href="javascript:void(0)">
+                                <a class="dropdown-item" href="<?php echo base_url('committee/profil') ?>">
                                     <i class="ti-user m-r-5 m-l-5"></i> My Profile</a>
 
                                 <a class="dropdown-item" href="<?php echo base_url('panitia/logout') ?>">
