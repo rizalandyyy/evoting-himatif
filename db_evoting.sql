@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 21, 2021 at 02:36 PM
+-- Generation Time: Jun 29, 2021 at 04:58 PM
 -- Server version: 10.4.13-MariaDB
 -- PHP Version: 7.4.8
 
@@ -121,13 +121,15 @@ CREATE TABLE `tb_pemilih` (
 -- Indexes for table `tb_admin`
 --
 ALTER TABLE `tb_admin`
-  ADD PRIMARY KEY (`id_admin`);
+  ADD PRIMARY KEY (`id_admin`),
+  ADD KEY `id_admin` (`id_admin`);
 
 --
 -- Indexes for table `tb_kampanye`
 --
 ALTER TABLE `tb_kampanye`
-  ADD PRIMARY KEY (`id_pemilihan`);
+  ADD PRIMARY KEY (`id_pemilihan`),
+  ADD KEY `id_kandidat` (`id_kandidat`);
 
 --
 -- Indexes for table `tb_kandidat`
@@ -145,7 +147,8 @@ ALTER TABLE `tb_panitia`
 -- Indexes for table `tb_pemilih`
 --
 ALTER TABLE `tb_pemilih`
-  ADD PRIMARY KEY (`id_pemilih`);
+  ADD PRIMARY KEY (`id_pemilih`),
+  ADD UNIQUE KEY `nim_pemilih` (`nim_pemilih`);
 
 --
 -- AUTO_INCREMENT for dumped tables
