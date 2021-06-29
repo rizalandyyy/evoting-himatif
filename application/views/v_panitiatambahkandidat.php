@@ -38,11 +38,11 @@
                     </div>
                     <div class="form-group">
                         <label>Visi</label>
-                        <input type="text" required class="form-control" name="visi" placeholder="Visi Kandidat">
+                        <textarea name="visi" class="form-control" id="" cols="30" rows="10"></textarea>
                     </div>
                     <div class="form-group">
                         <label>Misi</label>
-                        <input type="text" required class="form-control" name="misi" placeholder="Misi Kandidat">
+                        <textarea name="misi" id="" class="form-control" cols="30" rows="10"></textarea>
                     </div>
                     <div class="form-group">
                         <label>Pengalaman Organisasi</label>

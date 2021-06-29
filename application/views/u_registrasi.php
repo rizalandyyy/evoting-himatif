@@ -43,7 +43,8 @@
                                 } ?>
                             </div>
                             <div class="form-group">
-                                <select class="form-select" required name="kelas" aria-label=".form-select-lg example">
+                                <select class="form-select form-control" required name="kelas"
+                                    aria-label=".form-select-lg example">
                                     <option value="" aria-readonly="true">- Pilih Kelas -</option>
                                     <option value="TIK A">TIK A</option>
                                     <option value="TIK B">TIK B</option>
@@ -52,7 +53,7 @@
                                 <div class="validate"></div>
                             </div>
                             <div class="form-group">
-                                <select class="form-select" required name="semester"
+                                <select class="form-select form-control" required name="semester"
                                     aria-label=".form-select-lg example">
                                     <option value="" aria-readonly="true">- Semester -</option>
                                     <option value="1">1</option>
